@@ -1,0 +1,72 @@
+class A {
+
+int x;
+// static attributes
+	 static int y; // this varibale is not bounded with objecy but bounded with class itself
+	 // static varibales are also called class variables
+	 // only one copy of hte variable per class even if 100 objects
+	 
+	 // static method
+	 // static methods can access static varibles/methods onl
+	 static void display() {
+	 System.out.println(x); // error 
+	 System.out.println(y);
+	 }
+}
+
+class SttaicvsNonstatic {
+
+	public static void main(String[] args) {
+		A a1 = new A();
+		A a2 = new A();
+		
+		a1.x = 1000;
+		
+		System.out.println(a1.x)
+		
+		a1.y = 2000;
+		
+		// varibale y stays in a location called STATIC BLOCK
+		
+				System.out.println(a1.y); // --> 2000
+				System.out.println(a2.y);
+
+}
+
+ex:
+
+public void add(int a, int b) {
+
+	System.out.println( a + b );
+}
+// calling methods
+add(10, 20);
+
+
+class Student {
+	private int id;
+	private String name;
+	
+	public Student(int id, String name){
+	
+	// (to initialize) to set parameter values into instances variables
+	// "this" is a reference variable which alwaays refers to current working object
+	
+	this.id = id;
+	this.name = name;
+	
+	}
+	
+	public String getStudentDetails(){
+		return "Student ID "+ this.id + " Student Name : " + this.name;
+	}
+	
+}
+
+class EncapsulationDemo {
+
+
+	
+	
+}
+

@@ -1,0 +1,59 @@
+What is Inehritance?
+
+A process of creating a new class from an existing class
+
+Inheriting attributes/properties/fields from a different class
+
+Acquiring properties froma different class
+
+Types of Inehritance
+--------------------
+
+1) Single Inheritance (parent has 1 child)
+	class A {}
+	class B extends A{}
+2) Multi-level Inheritance
+	class A {}
+	class B extends A {}
+	class C extends B {}
+	
+3) Multiple - Java does not support this
+
+	class A {}
+	claass B{}
+	class C extends A,B {}
+	! :  A class cannot extend more than 1 class
+	
+4) Hybrid Inheritance: JAVA does not support this
+	Combination of multi- level and multiple
+	
+	class D{}
+	class A {}
+	claass B exends A{}
+	class C extends B,D {}
+
+5)Hierarchical Type - Java supports this
+parent has more than 1 child
+
+	class A{}
+	class B extends A {
+	}
+	class C extends A{
+	}
+	
+What is an abstract class?
+
+- A class with  one or more abstract methods
+
+- A class which has no complete implementation 
+
+- An abstract class can have  and concrete methods
+
+- If a class extends an abstract class it must override all abstract methods
+defined in it's superclass
+
+- Abstract class cannot be instantiated
+
+	ex:
+	
+	Pet p1 = new Pet(); // error

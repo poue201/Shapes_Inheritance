@@ -1,0 +1,135 @@
+HEAP = is a memory location where all stored java exists with an address
+heap holds only objects
+when you use "new" it stores info there
+
+STACK (MEMORY LOCATION) : ALL REFERENCES we create reside in stack
+ex: Employee e1 = new Employee();
+e1 stored in stack
+stores the variable reference ( variable that points to an object like e1)and variable (doesn't point to an object like x: java not purely oop so not creating an int object )
+
+int x = 100;
+left hand side stored in stack:
+100 not an object it is a primitive (no "new" ), stored in temp memory location in RAM 
+
+scope or lifetime of an object is limited to within the block of the class declaration
+
+garbage collector: scans HEAP to see if there are objects not in used 
+eligible for garbage collection after the closing curly brace
+what does it mean to be eligible for garbage collection? recycled: removed from memory (only around 2mb alllocated for heap)
+that's why when you run the same code many times you get the same result and it doesn't update
+
+e1 = null; => assigning a null vlaue to a reference that was pointing to an objct it is now elegible for collection so you're saying disconnect
+
+
+STACK:
+a memory location where all local variables/ parameters of a method reside
+
+HEAP:
+all java objects exist on heap
+
+Garbage Collector(GC):
+A tool which is responsible for removing/ de-allocating
+unused objects from HEAP
+
+ex:
+
+new Employee(); creates object in heap but no object assigned to a reference [Employee e1 = new Employee();] for you to call the object and modify it
+when not stored in reference
+the object is eligible for GC then and there
+
+class A{
+
+	// instance variables
+	int x;
+	String y;
+	boolean z;
+}
+
+A a1 = new A();
+stack -- heap
+a1.x = 1000;
+System.out.println(a1.x); //1000;
+System.out.println(a2.x); //0;
+System.out.println(a1.y); // null;
+System.out.println(a2.y); // null;
+System.out.println(a1.z); // false;
+
+A a3 = a1; (creating an alias not an object) a3 is a reference varibale but it's an alias/ alternate reference that points to 
+
+System.out.println(a3.x); // 1000;
+
+a3.x = 2000;
+
+System.out.println(a1.x); // 2000;
+System.out.println(a3.x); // 2000;
+
+default value of instance variables in JAVA:
+primitive always lowercase
+int, byte, short, long --> 0
+float and double --> 0.0
+boolean --> false
+char --> a blankspace
+String (captial letter so it's a class, and all class types default have null values) ---> null
+Boolean --> null (if capital B boolean)
+Integer -- > null (if capital I)
+
+what are instance variables?
+--> Instance variables are declared within the class scope {} (the curly braces) 
+and bounded with objects
+
+
+instance varibales in class scope not locally in a method are stored in heap
+if you just declare or declare and initialize in class scope it is stored in heap
+then when declared locally:
+variables are stored in stack
+
+what are local variables?
+-> varibales which are declared within a method 
+are called local variables
+
+what is a method?
+
+-> a block of code which can b declared once and called many times
+
+syntax:
+[] means optional so if none assumes it's public?
+
+[access modifier] [static modifier] <return type> methodNmae ([paramter list]) {
+// Body
+}
+
+
+what is a method call?
+a call to an exisitng method
+syntax:
+methodName ([argument-list]);
+
+methods allow us to write re-usable code
+methods provide a way to write maintainable code
+
+what is a constructor?
+-> A special method/ a constructor method
+which is syntactillay similar to method but
+it lacks return type
+
+what is a method overloading?
+
+when two or more methods have the same name with different parameters
+different paramter - list means:
+1) number of parameters should be different
+2) or data types of paramters should be different
+
+examples:
+
+-> connstructor will always have same name as class name
+in which it is declared
+
+-> this is invoked immediately upon creation of object
+
+-> constructors can be overloaded
+
+what is encapsulation?
+a process of combining variables and methos into a logical unit
+(a class essentially)
+-> encapsulation suggests that the variable should be declared as "private"
+and methods as "public"
